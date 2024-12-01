@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwb22rmrajah"]
+[gd_scene load_steps=24 format=3 uid="uid://dwb22rmrajah"]
 
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_383jt"]
 [ext_resource type="Texture2D" uid="uid://6v4884c55tf5" path="res://assets/tilesets/tile.png" id="1_hysux"]
 [ext_resource type="Texture2D" uid="uid://dv1vbdkorrftq" path="res://assets/tilesets/dirt.png" id="2_ddjb8"]
 [ext_resource type="PackedScene" uid="uid://ddhyhldtprixm" path="res://Player.tscn" id="2_i2fan"]
@@ -9,6 +10,34 @@
 [ext_resource type="Texture2D" uid="uid://cnvyp7j83x6dq" path="res://assets/player/Nowy projekt (1).png" id="6_kctt2"]
 [ext_resource type="Texture2D" uid="uid://d3gpg5referf6" path="res://assets/player/pała.png" id="7_wcxch"]
 [ext_resource type="Texture2D" uid="uid://gsbiwi5cdcoj" path="res://assets/player/burger.png" id="8_wuwfw"]
+[ext_resource type="Texture2D" uid="uid://csybvw5037m06" path="res://assets/player/ciasteczko3.png" id="11_o1181"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6w1f"]
+texture = ExtResource("1_hysux")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhbtu"]
+texture = ExtResource("2_ddjb8")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xv4he"]
+texture = ExtResource("3_rn20i")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0khe"]
+texture = ExtResource("4_eodsq")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_o741p"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_n6w1f")
+sources/1 = SubResource("TileSetAtlasSource_yhbtu")
+sources/2 = SubResource("TileSetAtlasSource_xv4he")
+sources/3 = SubResource("TileSetAtlasSource_q0khe")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqtuy"]
 size = Vector2(9.5, 11)
@@ -56,54 +85,23 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6w1f"]
-texture = ExtResource("1_hysux")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhbtu"]
-texture = ExtResource("2_ddjb8")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xv4he"]
-texture = ExtResource("3_rn20i")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0khe"]
-texture = ExtResource("4_eodsq")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_o741p"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_n6w1f")
-sources/1 = SubResource("TileSetAtlasSource_yhbtu")
-sources/2 = SubResource("TileSetAtlasSource_xv4he")
-sources/3 = SubResource("TileSetAtlasSource_q0khe")
-
 [node name="World" type="Node2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(362.25, 71.5)
-shape = SubResource("RectangleShape2D_oqtuy")
-
-[node name="Burger" type="Sprite2D" parent="."]
-position = Vector2(492, 75)
-scale = Vector2(0.59375, 0.5625)
-texture = ExtResource("8_wuwfw")
+script = ExtResource("1_383jt")
 
 [node name="Pixil-frame-0" type="Sprite2D" parent="."]
 position = Vector2(96, -127)
 scale = Vector2(0.596875, 0.48125)
 texture = ExtResource("3_pkxcw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(363, 72)
-sprite_frames = SubResource("SpriteFrames_4r10v")
-autoplay = "default"
-frame_progress = 0.85348
+[node name="Pixil-frame-0" type="Sprite2D" parent="Pixil-frame-0"]
+position = Vector2(1354.56, 9.05991e-06)
+scale = Vector2(1.1165, 1)
+texture = ExtResource("3_pkxcw")
+
+[node name="Burger" type="Sprite2D" parent="Pixil-frame-0"]
+position = Vector2(663.456, 419.74)
+scale = Vector2(0.994764, 1.16883)
+texture = ExtResource("8_wuwfw")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_o741p")
@@ -121,3 +119,23 @@ zoom = Vector2(2.5, 2.5)
 position = Vector2(85, -1)
 scale = Vector2(1.07812, 0.953125)
 texture = ExtResource("7_wcxch")
+
+[node name="Ciasteczko3" type="Sprite2D" parent="Player"]
+position = Vector2(37, -11)
+texture = ExtResource("11_o1181")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(362.25, 71.5)
+shape = SubResource("RectangleShape2D_oqtuy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(363, 72)
+sprite_frames = SubResource("SpriteFrames_4r10v")
+autoplay = "default"
+frame_progress = 0.85348
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
