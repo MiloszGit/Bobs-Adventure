@@ -44,7 +44,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbhos"]
-size = Vector2(20, 19.5)
+size = Vector2(17.5, 19)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qedim")
@@ -54,8 +54,8 @@ position = Vector2(66, 5)
 scale = Vector2(0.94375, 1)
 sprite_frames = SubResource("SpriteFrames_tw6nf")
 autoplay = "default"
-frame_progress = 0.962116
+frame_progress = 0.421973
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(66, 5)
+position = Vector2(67.25, 4.5)
 shape = SubResource("RectangleShape2D_gbhos")
