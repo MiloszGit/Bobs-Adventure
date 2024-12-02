@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcf30judlu1yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi42k"]
+size = Vector2(57.5, 343)
+
+[node name="Checkpoint" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -157.5)
+shape = SubResource("RectangleShape2D_pi42k")
+
+[node name="RespawnPoint" type="Marker2D" parent="."]
+position = Vector2(114, -166)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

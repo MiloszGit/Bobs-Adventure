@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2vvgtoo2jeok"
-path="res://.godot/imported/pixil-frame-0_28.png-29d8053435fb80807ff503ad727acfe0.ctex"
+path="res://.godot/imported/pixil-frame-0_28.png-dbfd9a2c426c80ce9482a3aa8f95af31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixil-frame-0_28.png"
-dest_files=["res://.godot/imported/pixil-frame-0_28.png-29d8053435fb80807ff503ad727acfe0.ctex"]
+source_file="res://assets/tilesets/pixil-frame-0_28.png"
+dest_files=["res://.godot/imported/pixil-frame-0_28.png-dbfd9a2c426c80ce9482a3aa8f95af31.ctex"]
 
 [params]
 
